@@ -1,12 +1,11 @@
-import Chat from "./pages/Chat"
-import Nav from '../src/components/Navi'
-import './App.css';
-import * as React from 'react';
+import React from 'react'
+import "./Navstyle.css"
 import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
-import shikiimg from './static/images/shiki.jpg'
-function App() {
+import shikiimg from '../static/images/shiki.jpg'
+
+function Navi() {
   const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
       backgroundColor: '#44b700',
@@ -42,26 +41,23 @@ function App() {
     border: `2px solid ${theme.palette.background.paper}`,
   }));
   return (
-    <div className="App">
-    <Nav /> 
-
-    <div id="answer-txt">
+    <div>
+<ul>
+  <li id="right"> 
     <StyledBadge
         overlap="circular"
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         variant="dot"
       >
         <Avatar alt="Shiki Bot"src={shikiimg} />
-      </StyledBadge>
-      <p id='demo2'></p>
-      </div>
+      </StyledBadge></li>
+      <li><a>Shiki Bot</a></li>
+      <li><a id='shiki-pro-a'>Shiki Pro</a></li>
+      
 
-    <div className="chatbar">
-    <Chat />
+</ul>
     </div>
-    
-    </div>
-  );
+  )
 }
 
-export default App;
+export default Navi
